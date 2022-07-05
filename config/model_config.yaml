@@ -1,0 +1,62 @@
+model:
+  name: shopee-fashion-recommendation-system
+  author: Yuyan Wu
+  version: 1.0
+  description: Model pipeline that recommend items similar to user input item
+  tags:
+    - recommendation
+    - fashion
+  dependencies: requirements.txt
+fit_model:
+  fit_model:
+    k: 7
+    metric: "cosine"
+    csr_mat_path: data/interim/csr_matrix.npy
+    output_path: models/model.joblib
+get_csr_matrix:
+  get_csr_matrix:
+    review_data_path: data/interim/truncated_reviews.csv
+    item_col: "itemid"
+    user_col: "cmtid"
+    rating_col: "rating_star"
+  save_csr_matrix:
+    output_path: data/interim/csr_matrix.npy
+preprocess_products:
+  get_product_features:
+    input_path: data/external/2021June-July_product_data.csv
+    columns: ["product_itemid", "product_name", "product_category", "product_price",
+              "product_discount", "product_like_count", "product_comment_count",
+              "product_views", "product_total_rating", "units_sold"]
+  get_aggregated_features:
+    group_by: ["product_itemid", "product_category", "product_name"]
+    cols: ["product_price", "product_discount", "product_like_count",
+           "product_comment_count", "product_views", "product_total_rating", "units_sold"]
+    agg_cols: ["avg_price", "avg_discount", "like_count",
+              "comment_count", "product_views", "avg_rating",
+               "units_sold"]
+    agg_funs:  ["mean", "mean", "sum", "sum", "sum", "mean", "sum"]
+  save_product_data:
+    output_path: data/interim/processed_products.csv
+preprocess_reviews:
+  get_review_features:
+    input_path: data/external/2021June-July_review_data.csv
+    columns: ["cmtid", "itemid", "rating_star"]
+  save_review_data:
+    output_path: data/interim/processed_reviews.csv
+recommend_products:
+  recommend_items:
+    k: 7
+    item_col: "product_itemid"
+    product_path: data/interim/processed_products.csv
+    csr_mat_path: data/interim/csr_matrix.npy
+    model_path: models/model.joblib
+  save_recommendations:
+    output_path: models/recommendations.csv
+truncate_reviews:
+  truncate_reviews:
+    review_path: data/interim/processed_reviews.csv
+    review_col: "itemid"
+    product_path: data/interim/processed_products.csv
+    product_col: "product_itemid"
+  save_truncated_review_data:
+    output_path: data/interim/truncated_reviews.csv
