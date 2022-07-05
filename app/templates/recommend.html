@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopee Fashion Product Recommender</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+<body>
+    <h3>
+         Recommended Products for item {{input_itemid}}
+    </h3>
+
+    <hr/>
+    <table class="table table-hover">
+         <thead>
+            <tr>
+                <th>Recommended Item</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Like Count</th>
+                <th>Comment Count</th>
+                <th>Views</th>
+                <th>Rating</th>
+                <th>Units Sold</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for product in products %}
+               <tr>
+                   <td>{{product.product_itemid}}</td>
+                   <td>{{product.product_category}}</td>
+                   <td>{{product.product_name}}</td>
+                   <td>{{product.avg_price}}</td>
+                   <td>{{product.avg_discount}}</td>
+                   <td>{{product.like_count}}</td>
+                   <td>{{product.comment_count}}</td>
+                   <td>{{product.product_views}}</td>
+                   <td>{{product.avg_rating}}</td>
+                   <td>{{product.units_sold}}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+</body>
+</html>

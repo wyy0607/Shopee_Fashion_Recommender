@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopee Fashion Product Recommender</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+<body>
+    <center>
+        <p>
+            <img src="{{url_for('static', filename='Shopee-Logo.jpg')}}"
+            alt="logo picture" height="300" class="center-img" align="middle">
+        </p>
+    </center>
+    <div class="container">
+        <div class="row">
+            <p><h2>Shopee Fashion Product Recommender</h2>
+                <form method="POST">
+                    {{form.csrf_token}}
+                    <div class="form-group">
+                        <label>itemid:</label>
+                        {{form.itemid(class="form-control")}}
+                    </div>
+                    <input type="submit" class="btn btn-success" btn-lg>
+                </form>
+        </div>
+    </div>
+</body>
+
+
