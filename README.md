@@ -308,7 +308,7 @@ docker run --mount type=bind,source="$(pwd)",target=/app/ -e SQLALCHEMY_DATABASE
 Similar to the section in the local database, this command ingest a csv file into the table.  The `SQLALCHEMY_DATABASE_URI` variable again determines the engine string for the database. Note that this command might take few minutes to complete.
 
 ```bash
-docker run --mount type=bind,source="$(pwd)",target=/app/ -e SQLALCHEMY_DATABASE_URI shopee-recommender create_db 
+docker run --mount type=bind,source="$(pwd)",target=/app/ -e SQLALCHEMY_DATABASE_URI shopee-recommender ingest_data 
 ```
 
 #### Examine the Added Information in Remote
