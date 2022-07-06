@@ -63,7 +63,7 @@ Once the app is launched, business metrics including acquisition rate, retention
 │   ├── Dockerfile.run                <- Dockerfile for building image to execute run.py  
 │   ├── Dockerfile.test               <- Dockerfile for building image to run unit tests
 │
-├── figures/                          <- Generated graphics and figures to be used in reporting, documentation, etc
+├── figures/                          <- Generated graphics and figures to be used in reporting, documentation, etc.
 │
 ├── models/                           <- Trained model objects (TMOs) that ** do not sync** , model predictions, and/or model summaries
 │
