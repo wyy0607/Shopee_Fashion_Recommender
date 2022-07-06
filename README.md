@@ -150,8 +150,11 @@ docker build -f dockerfiles/Dockerfile.test -t shopee-recommender-test .
 ```
 
 The `docker build -f dockerfiles/Dockerfile -t shopee-recommender .` will produce a Docker image called `shopee-recommender`, which are used to get the raw data, run the model pipeline, and interact with database. 
+
 The `docker build -f dockerfiles/Dockerfile.app -t shopee-recommender-app .` will produce a Docker image called `shopee-recommender-app`, which are used to launch the flask app. 
+
 The `docker build -f dockerfiles/Dockerfile.model -t shopee-recommender-model .` will produce a Docker image called `shopee-recommender-model`, which are used to run the whole model pipeline. 
+
 The `docker build -f dockerfiles/Dockerfile.test -t shopee-recommender-test .` will produce a Docker image called `shopee-recommender-test`, which are used to run unit tests.
 
 ### 2. Acquire Raw Data 
