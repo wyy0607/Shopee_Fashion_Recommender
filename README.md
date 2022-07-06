@@ -161,7 +161,7 @@ The `docker build -f dockerfiles/Dockerfile.test -t shopee-recommender-test .` w
 
 The dataset used for this app comes from Kaggle. To download the data, you can go to this [website](https://www.kaggle.com/datasets/jaepin/shopeeph-koreantop-clothing?select=2021June-July_shop_data.csv) and click the Download button at the top of the page. 
 
-Note that you will need to register a Kaggle account in order to download dataset if you do not have one. Because the dataset is relatively small, we also save a copy in `data/raw/*`. Only product and review information are used in this project, so only the copy of csv files related to the information is saved. Another copy is also uploaded to S3.
+Note that you will need to register a Kaggle account in order to download dataset if you do not have one. Because the dataset is relatively small, we also save a copy in `data/raw/`. Only product and review information are used in this project, so only the copy of csv files related to the information is saved. Another copy is also uploaded to S3.
 
 You can use the following command to download the data from S3. 
 
