@@ -237,9 +237,6 @@ A local SQLite database can be created for development and local testing. It doe
 engine_string='sqlite:///data/products.db'
 ```
 
-The three `///` denote that it is a relative path to where the code is being run (which is from the root of this directory). You can also define the absolute path with four `////`.
-
-
 ##### Create Database Locally
 
 You can create the database locally with the following command. 
