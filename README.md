@@ -42,7 +42,7 @@ Once the app is launched, business metrics including acquisition rate, retention
 
 ```
 ├── README.md                         <- You are here
-├── api
+├── app
 │   ├── static/                       <- CSS, JS files that remain static
 │   ├── templates/                    <- HTML (or other code) that is templated and changes based on a set of inputs   
 │
