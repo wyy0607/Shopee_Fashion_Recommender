@@ -106,6 +106,7 @@ if __name__ == "__main__":
         if args.action == "get_csr_matrix":
             csr_matrix = get_csr_matrix(**config["get_csr_matrix"]["get_csr_matrix"])
             save_csr_matrix(csr_matrix, **config["get_csr_matrix"]["save_csr_matrix"])
+
         if args.action == "fit_model":
             fit_model(**config["fit_model"]["fit_model"])
 
